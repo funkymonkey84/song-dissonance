@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The data | Affective Dissonance</title>
+<meta name="description" content="Findings, hand-check, methods and limitations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">Affective Dissonance</a>
+<nav aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="data.html" aria-current="page">Data</a></li><li><a href="timeline.html">Timeline</a></li><li><a href="narrative.html">Narrative</a></li><li><a href="resources.html">Resources</a></li></ul></nav>
+</div></header>
+
+<div class="pagehead"><div class="wrap"><h1>The data</h1>
+<p>What the numbers show, how they were checked, and where they are weak.</p>
+<ul class="jump" style="margin-top:18px"><li><a href="#findings" style="border-color:#fff;color:#fff">Findings</a></li><li><a href="#check" style="border-color:#fff;color:#fff">Hand-check</a></li><li><a href="#methods" style="border-color:#fff;color:#fff">Data and methods</a></li><li><a href="#limits" style="border-color:#fff;color:#fff">Limitations</a></li></ul>
+</div></div>
+<main id="main"><div class="wrap">
+
+<section id="findings">
+<h2>Findings</h2>
+<p>Upbeat music paired with negative lyrics was about twice as common in the 1970s as in the 2010s.</p>
+<div class="nums">
+<div><b>19.3%</b><span>of 1970s songs</span></div>
+<div><b>14.5%</b><span>of 1990s songs</span></div>
+<div><b>9.4%</b><span>of 2010s songs</span></div>
+</div>
+<div class="card"><div class="box"><canvas id="c1" role="img" aria-label="Bar chart: mismatch rate was 19.3 percent in the 1970s, 14.5 percent in the 1990s and 9.4 percent in the 2010s"></canvas></div>
+<p class="note">Main results use at most 25 songs per artist per decade. Hover or tap a bar for details. Error bars show sampling margin of error, which is somewhat optimistic because songs by the same artist are related.</p>
+<details><summary>Show this chart as a table</summary>
+<table><caption>Mismatch rate by decade (capped data)</caption><thead><tr><th>Decade</th><th>Mismatch rate</th><th>Songs</th></tr></thead>
+<tbody><tr><td>1970s</td><td>19.3%</td><td>6,590</td></tr><tr><td>1990s</td><td>14.5%</td><td>20,213</td></tr><tr><td>2010s</td><td>9.4%</td><td>131,779</td></tr></tbody></table></details></div>
+
+<h3>The longer trend</h3>
+<div class="card"><div class="box"><canvas id="c2" role="img" aria-label="Line chart of mismatch rate by decade from the 1950s to the 2020s, peaking in the 1970s and 1980s near 19 percent and falling to 9.5 percent in the 2010s"></canvas></div>
+<p class="note">All cleaned songs, not capped. The 1970s and 1980s are essentially tied at the top. The 1950s have only about 1,200 songs and the 2020s are an incomplete decade, so read those two with care. Gold points mark the three decades studied.</p>
+<details><summary>Show this chart as a table</summary>
+<table><caption>Mismatch rate by decade (all cleaned songs)</caption><thead><tr><th>Decade</th><th>Mismatch rate</th><th>Songs</th></tr></thead>
+<tbody><tr><td>1950s</td><td>12.8%</td><td>1,191</td></tr><tr><td>1960s</td><td>14.9%</td><td>4,438</td></tr><tr><td>1970s</td><td>18.9%</td><td>11,004</td></tr><tr><td>1980s</td><td>19.0%</td><td>12,956</td></tr><tr><td>1990s</td><td>14.8%</td><td>26,318</td></tr><tr><td>2000s</td><td>14.7%</td><td>43,611</td></tr><tr><td>2010s</td><td>9.5%</td><td>156,825</td></tr><tr><td>2020s</td><td>12.3%</td><td>73,845</td></tr></tbody></table></details></div>
+
+<h3>The pattern holds when genre mix is held fixed</h3>
+<p>Rock and metal fell from 54% of songs in the 1970s to 18.5% in the 2010s while hip hop and rap rose from 8% to 57%, which could have created a false trend. After recalculating each decade with the same genre mix, the rates were 18.8% (1970s), 15.6% (1990s), and 9.3% (2010s). The decline remains. Results were also similar at Positiveness cutoffs of 60 and 75.</p>
+<div class="todo"><b>To add:</b> a chart of mismatch by genre across the three decades. The rate falls in every genre with enough songs. Genre tags are unreliable, so genres are a check, not a ranking.</div>
+</section>
+
+<section id="check">
+<h2>Checking the labels by hand</h2>
+<p>Both measures are automated, so I checked 90 randomly drawn songs that the computer had flagged as mismatches (30 per decade, one song per artist, seed 42).</p>
+<table><caption>Hand-check results</caption>
+<thead><tr><th>Decade</th><th>Music sounded upbeat to me</th><th>Lyrics were negative</th></tr></thead>
+<tbody><tr><td>1970s</td><td>26 of 30 (87%)</td><td>30 of 30</td></tr><tr><td>1990s</td><td>21 of 30 (70%)</td><td>30 of 30</td></tr><tr><td>2010s</td><td>18 of 30 (60%), plus 2 unsure</td><td>30 of 30</td></tr></tbody></table>
+<p>The lyric labels held up. The music score agreed with my judgment less often in later decades, so the “upbeat” label may be less reliable for newer songs. That would likely make the real decline larger, not smaller, but the sample is small (about ±15 points) and I did not check songs the computer left unflagged.</p>
+<p class="note">The check was not blind: I knew every song was flagged and could see its year. [to add: the criteria you used for “upbeat” and “negative”]</p>
+</section>
+
+<section id="methods">
+<h2>Data and methods</h2>
+<p>Source: the Kaggle dataset “500K+ Spotify Songs with Lyrics, Emotions &amp; More” (file: final_milliondataset_BERT_500K_revised.json). Lyrics are not reproduced here.</p>
+<table><caption>Three versions of the data</caption>
+<thead><tr><th>Version</th><th>Songs</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td>Original dataset</td><td>364,376</td><td>The source file, with lyrics. Not hosted here.</td></tr>
+<tr><td>Cleaned songs</td><td>330,188</td><td>Duplicates and broken labels removed, 1950 onward, lyrics left out.</td></tr>
+<tr><td>Capped songs (main results)</td><td>273,747</td><td>At most 25 songs per artist per decade.</td></tr></tbody></table>
+<h3>Cleaning steps</h3>
+<ul class="plain">
+<li>One malformed line was skipped, “angry” was merged into “anger,” and songs without a valid emotion label were removed.</li>
+<li>Duplicates (same artist and title) were removed. Live versions or alternate spellings may remain.</li>
+<li>The release year was extracted and grouped into decades. Songs before 1950 were excluded because there are too few.</li>
+<li>For the capped version, songs were shuffled (seed 42) and the first 25 per artist per decade were kept.</li>
+</ul>
+<h3>Definitions</h3>
+<ul class="plain">
+<li><b>Upbeat:</b> Positiveness of 67 or higher on a 0 to 100 scale, which appears to correspond to Spotify's valence.</li>
+<li><b>Negative lyrics:</b> an emotion label of sadness, anger, or fear.</li>
+<li><b>Mismatch:</b> a song that is both.</li>
+</ul>
+</section>
+
+<section id="limits">
+<h2>Limitations</h2>
+<ul class="plain">
+<li><b>The dataset leans toward recent music.</b> The 2010s hold about half the songs, and older songs are the ones that stayed available.</li>
+<li><b>Genre tags are unreliable.</b> Some songs carry clearly wrong tags, and genre is a secondary check only.</li>
+<li><b>Some years may be reissue dates,</b> which would blur the decades. This has not been measured.</li>
+<li><b>Both measures are automated estimates,</b> and the music score agreed with a human listener less often for newer songs.</li>
+<li><b>Three snapshots,</b> so nothing can be said about what happened between them.</li>
+<li><b>Context explains, it does not prove.</b> The data cannot show why the pattern changed.</li>
+</ul>
+</section>
+
+</div></main>
+<footer><div class="wrap">
+<p>Findings describe patterns in one dataset, not all music. Charts have text versions beneath them. This site has no audio or video and does not reproduce song lyrics.</p>
+<p>[to add: your name, course and date]</p>
+</div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt=n=>n.toLocaleString("en-US");
+const moe=(r,n)=>196*Math.sqrt(r/100*(1-r/100)/n);
+let charts=[];
+function opts(){return{responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{backgroundColor:css("--ink"),titleColor:css("--bg"),bodyColor:css("--bg"),padding:10}},
+  scales:{x:{ticks:{color:css("--muted")},grid:{display:false}},
+  y:{min:0,ticks:{color:css("--muted"),callback:v=>v+"%"},grid:{color:css("--line")},title:{display:true,text:"% of songs",color:css("--muted")}}}}}
+function build(){
+  charts.forEach(c=>c.destroy());charts=[];
+  const up=css("--up"),neg=css("--neg"),panel=css("--panel");
+  const R=[19.3,14.5,9.4],N=[6590,20213,131779];
+  const o1=opts();
+  o1.plugins.tooltip.callbacks={label:i=>[R[i.dataIndex].toFixed(1)+"% (±"+moe(R[i.dataIndex],N[i.dataIndex]).toFixed(1)+")",fmt(N[i.dataIndex])+" songs"]};
+  charts.push(new Chart(document.getElementById("c1"),{type:"bar",data:{labels:["1970s","1990s","2010s"],
+    datasets:[{data:R,backgroundColor:[up,neg+"CC",neg],borderRadius:6,maxBarThickness:110}]},options:o1}));
+  const D=["1950s","1960s","1970s","1980s","1990s","2000s","2010s","2020s"];
+  const T=[12.8,14.9,18.9,19.0,14.8,14.7,9.5,12.3];
+  const TN=[1191,4438,11004,12956,26318,43611,156825,73845];
+  const focus=[2,4,6];
+  const o2=opts();
+  o2.plugins.tooltip.callbacks={label:i=>[T[i.dataIndex].toFixed(1)+"% (±"+moe(T[i.dataIndex],TN[i.dataIndex]).toFixed(1)+")",fmt(TN[i.dataIndex])+" songs"]};
+  charts.push(new Chart(document.getElementById("c2"),{type:"line",data:{labels:D,datasets:[{data:T,borderColor:neg,borderWidth:3,tension:.25,
+    pointRadius:D.map((_,i)=>focus.includes(i)?8:5),pointBorderWidth:2,pointBorderColor:neg,
+    pointBackgroundColor:D.map((_,i)=>focus.includes(i)?up:panel)}]},options:o2}));
+}
+build();
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",build);
+</script>
+</body>
+</html>

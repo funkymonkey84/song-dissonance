@@ -1,0 +1,82 @@
+:root{
+  --bg:#F6F7FB; --panel:#FFFFFF; --ink:#14213D; --muted:#4A5568; --line:#C9CFDF;
+  --up:#E3A008; --neg:#26418F; --soft:#EEF1F9; --band:#14213D; --bandink:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0E1426; --panel:#161E36; --ink:#EEF1FA; --muted:#B4BCD2; --line:#34406A;
+        --up:#F2B72B; --neg:#9DB3FF; --soft:#1B2442; --band:#070B18; --bandink:#FFFFFF}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.7 "DM Sans",system-ui,sans-serif}
+a{color:var(--neg);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--up);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--up);color:#14213D;padding:10px 16px;font-weight:700;z-index:50}
+.skip:focus{left:8px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+/* top navigation: plain link row, no drop-downs */
+.top{background:var(--band);color:var(--bandink)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 28px;padding-top:14px;padding-bottom:14px}
+.brand{font:400 1.25rem/1 "DM Serif Display",Georgia,serif;color:#fff;text-decoration:none}
+.top ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 24px}
+.top ul a{color:#fff;text-decoration:none;font-weight:500;padding:6px 0;border-bottom:3px solid transparent}
+.top ul a:hover{border-bottom-color:var(--up)}
+.top ul a[aria-current="page"]{border-bottom-color:var(--up);font-weight:700}
+/* hero */
+.hero{background:var(--band);color:var(--bandink);padding:56px 0 60px}
+.hero h1{font:400 clamp(2.6rem,9vw,5rem)/1.02 "DM Serif Display",Georgia,serif;margin:0 0 12px;letter-spacing:-.01em}
+.hero .sub{font-size:1.3rem;color:var(--up);margin:0 0 18px;font-weight:500}
+.hero p{max-width:62ch;margin:0 0 14px;color:#E8ECF8}
+.key{display:flex;gap:22px;flex-wrap:wrap;font-size:.98rem;margin-top:22px;color:#fff}
+.key span::before{content:"";display:inline-block;width:13px;height:13px;border-radius:50%;margin-right:8px;vertical-align:-1px}
+.key .u::before{background:#F2B72B}.key .n::before{background:#9DB3FF}
+.pagehead{background:var(--band);color:#fff;padding:36px 0 40px}
+.pagehead h1{font:400 clamp(2.2rem,7vw,3.4rem)/1.05 "DM Serif Display",Georgia,serif;margin:0 0 8px}
+.pagehead p{margin:0;max-width:62ch;color:#E8ECF8}
+/* jump buttons */
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0;list-style:none}
+.jump a,.btn{display:inline-block;border:2px solid var(--neg);color:var(--neg);background:transparent;padding:8px 16px;border-radius:999px;font-weight:700;font-size:.92rem;text-decoration:none;letter-spacing:.02em}
+.jump a:hover,.btn:hover{background:var(--neg);color:var(--bg)}
+.hero .jump a{border-color:#fff;color:#fff}
+.hero .jump a:hover{background:#fff;color:#14213D}
+main{padding-bottom:30px}
+section{padding-top:48px}
+h2{font:400 2rem/1.15 "DM Serif Display",Georgia,serif;margin:0 0 12px}
+h3{font-size:1.1rem;margin:26px 0 6px}
+p{max-width:68ch;margin:0 0 15px}
+.lead{font-size:1.12rem;color:var(--muted)}
+ol.qs{max-width:68ch;padding-left:1.3rem}
+ol.qs li{margin-bottom:12px;padding-left:6px}
+ol.qs li::marker{font-weight:700;color:var(--neg)}
+ul.plain{max-width:68ch;padding-left:1.3rem}
+ul.plain li{margin-bottom:8px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.nums div{background:var(--panel);border:1px solid var(--line);border-top:5px solid var(--up);border-radius:6px;padding:16px}
+.nums b{display:block;font:400 2.6rem/1 "DM Serif Display",Georgia,serif;color:var(--neg)}
+.nums span{font-size:.95rem;color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px 18px 14px;margin:16px 0}
+.box{position:relative;height:330px}
+.note{font-size:.92rem;color:var(--muted);margin:10px 0 4px;max-width:72ch}
+details{margin:10px 0 2px;font-size:.95rem}
+summary{cursor:pointer;color:var(--neg);font-weight:700}
+.todo{border:2px dashed var(--line);border-radius:8px;padding:18px;color:var(--muted);margin:16px 0}
+.todo b{color:var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:.98rem;margin:14px 0}
+caption{text-align:left;font-weight:700;padding-bottom:6px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;border-bottom:2px solid var(--ink)}
+.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.panel h3{margin:0;padding:14px 16px;background:var(--band);color:#fff;font:400 1.5rem/1.1 "DM Serif Display",Georgia,serif}
+.panel .rate{padding:10px 16px 0;color:var(--muted);font-size:.92rem}
+.panel .rate b{color:var(--neg);font-size:1.3rem}
+.panel dl{margin:0;padding:6px 16px 16px}
+.panel dt{font-weight:700;margin-top:12px;font-size:.95rem}
+.panel dd{margin:2px 0 0;color:var(--muted);font-size:.95rem}
+.person{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;margin:16px 0;max-width:640px}
+.person .ph{width:96px;height:96px;background:var(--soft);border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--muted);text-align:center;padding:6px}
+.person p{margin:0 0 8px}
+footer{margin-top:50px;border-top:1px solid var(--line);padding:26px 0 60px;color:var(--muted);font-size:.95rem}
+footer p{max-width:72ch}
+@media (max-width:720px){.nums,.panels{grid-template-columns:1fr}.box{height:290px}.person{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

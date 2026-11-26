@@ -3,217 +3,79 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Upbeat Music, Negative Lyrics</title>
+<title>Affective Dissonance: Upbeat Music, Negative Lyrics</title>
 <meta name="description" content="A digital humanities project on songs that sound happy but say something sad, angry, or afraid, across the 1970s, 1990s, and 2010s.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<style>
-:root{
-  --bg:#F6F7FB; --panel:#FFFFFF; --ink:#14213D; --muted:#5B6578; --line:#DDE1EC;
-  --up:#E3A008; --neg:#26418F; --soft:#EEF1F9;
-}
-@media (prefers-color-scheme: dark){
-  :root{--bg:#0E1426; --panel:#161E36; --ink:#EEF1FA; --muted:#A3ACC4; --line:#2A3452; --up:#F2B72B; --neg:#8EA6FF; --soft:#1B2442}
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,sans-serif}
-a{color:var(--neg)}
-.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--panel);padding:8px 12px;z-index:20}
-nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
-nav ul{max-width:860px;margin:0 auto;padding:12px 20px;list-style:none;display:flex;gap:20px;overflow-x:auto;white-space:nowrap}
-nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
-nav a:hover,nav a:focus{color:var(--ink);text-decoration:underline}
-header,section,footer{max-width:860px;margin:0 auto;padding:0 20px}
-header{padding-top:64px;padding-bottom:28px}
-h1{font:400 clamp(2.5rem,8vw,4.2rem)/1.04 "DM Serif Display",Georgia,serif;margin:0 0 18px;letter-spacing:-.01em}
-h2{font:400 1.9rem/1.2 "DM Serif Display",Georgia,serif;margin:0 0 10px}
-h3{font-size:1.05rem;margin:22px 0 6px}
-section{padding-top:44px;padding-bottom:8px}
-p{max-width:68ch;margin:0 0 14px}
-.lede{font-size:1.2rem;color:var(--muted);max-width:60ch}
-.status{display:inline-block;background:var(--soft);border-left:4px solid var(--up);padding:8px 14px;font-size:.93rem;color:var(--muted);margin:6px 0 0;max-width:70ch}
-.key{display:flex;gap:20px;flex-wrap:wrap;font-size:.95rem;margin:20px 0 0}
-.key span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:7px;vertical-align:-1px}
-.key .u::before{background:var(--up)}.key .n::before{background:var(--neg)}
-.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
-.nums div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
-.nums b{display:block;font:400 2.4rem/1 "DM Serif Display",Georgia,serif;color:var(--neg)}
-.nums span{font-size:.9rem;color:var(--muted)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px 12px;margin:14px 0}
-.box{position:relative;height:320px}
-.note{font-size:.88rem;color:var(--muted);margin:10px 2px 4px;max-width:70ch}
-.todo{border:2px dashed var(--line);border-radius:10px;padding:18px;color:var(--muted);margin:14px 0}
-.todo b{color:var(--ink)}
-table{border-collapse:collapse;width:100%;font-size:.95rem;margin:12px 0}
-th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-weight:700}
-ul.plain{padding-left:20px;max-width:68ch}
-ul.plain li{margin-bottom:6px}
-footer{padding-top:44px;padding-bottom:70px;color:var(--muted);font-size:.9rem}
-footer p{max-width:70ch}
-@media (max-width:560px){.nums{grid-template-columns:1fr}.box{height:280px}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<nav aria-label="Sections"><ul>
-  <li><a href="#question">Question</a></li>
-  <li><a href="#findings">Findings</a></li>
-  <li><a href="#genre">Genre</a></li>
-  <li><a href="#context">History</a></li>
-  <li><a href="#readings">Close readings</a></li>
-  <li><a href="#validation">Validation</a></li>
-  <li><a href="#methods">Data &amp; methods</a></li>
-  <li><a href="#limits">Limitations</a></li>
-</ul></nav>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">Affective Dissonance</a>
+<nav aria-label="Main"><ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="data.html">Data</a></li><li><a href="timeline.html">Timeline</a></li><li><a href="narrative.html">Narrative</a></li><li><a href="resources.html">Resources</a></li></ul></nav>
+</div></header>
 
-<header>
-  <h1>Upbeat Music, Negative Lyrics</h1>
-  <p class="lede">Some songs sound happy and say something sad, angry, or afraid. How often does that happen, and how did it change between the 1970s, the 1990s, and the 2010s?</p>
-  <div class="key"><span class="u">Upbeat-sounding music</span><span class="n">Negative lyrics</span></div>
-  <p class="status">Working draft. The sections marked “to add” are still being researched.</p>
-</header>
+<div class="hero"><div class="wrap">
+<h1>Affective Dissonance</h1>
+<p class="sub">Upbeat music and negative lyrics in popular songs, 1970s to 2010s</p>
+<p>Some songs sound happy and say something sad, angry, or afraid. This project measures how often that happens in a large dataset of songs, how it changed across three decades, and what those songs are doing.</p>
+<div class="key"><span class="u">Upbeat-sounding music</span><span class="n">Negative lyrics</span></div>
+<ul class="jump" aria-label="Jump to a section">
+<li><a href="#about">About this project</a></li><li><a href="#questions">Research questions</a></li><li><a href="#author">About the author</a></li><li><a href="#notes">Presentation notes</a></li>
+</ul>
+</div></div>
+<main id="main"><div class="wrap">
 
-<main id="main">
-
-<section id="question">
-  <h2>The research question</h2>
-  <p>In a large streaming-era dataset of popular songs, how common is the pairing of upbeat-sounding music with negative lyrics in the 1970s, 1990s, and 2010s, and how can the historical contexts of those decades help interpret what mismatched songs were doing?</p>
-  <h3>Sub-questions</h3>
-  <ul class="plain">
-    <li>How much did the pairing change across the three decades?</li>
-    <li>Does the change appear within genres, or only because the mix of genres shifted?</li>
-    <li>What do mismatched songs do (irony, grief set to dance beats, masking pain), and does that differ by decade?</li>
-    <li>How far can the automated measures be trusted?</li>
-  </ul>
-  <p><b>Why these decades.</b> They mark the peak, middle, and low point of the overall trend and are evenly spaced. They were chosen from the numbers before the historical research began.</p>
+<section id="about">
+<h2>About this project</h2>
+<p>This is a digital humanities project. It pairs a computational look at about 330,000 songs with historical context and close readings of individual songs. [to add: course or program context]</p>
+<p>The songs come from a public Kaggle dataset that combines lyrics, an emotion label for each song's lyrics, Spotify audio features, a release date, and genre tags. “Upbeat” means a high Spotify positiveness score. “Negative lyrics” means the lyrics were labeled sadness, anger, or fear. A song that is both is called a mismatch.</p>
+<p>The headline result: in this dataset, mismatch was about twice as common in the 1970s (19.3% of songs) as in the 2010s (9.4%).</p>
+<ul class="jump">
+<li><a href="data.html">Explore the data</a></li><li><a href="timeline.html">See the timeline</a></li><li><a href="narrative.html">Read the narrative</a></li><li><a href="resources.html">Resources and downloads</a></li>
+</ul>
 </section>
 
-<section id="findings">
-  <h2>What the data shows</h2>
-  <p>In this dataset, upbeat music paired with negative lyrics was about twice as common in the 1970s as in the 2010s.</p>
-  <div class="nums">
-    <div><b>19.3%</b><span>of 1970s songs</span></div>
-    <div><b>14.5%</b><span>of 1990s songs</span></div>
-    <div><b>9.4%</b><span>of 2010s songs</span></div>
-  </div>
-  <div class="card"><div class="box"><canvas id="c1" role="img" aria-label="Bar chart of mismatch rate for the 1970s, 1990s and 2010s"></canvas></div>
-  <p class="note">Main results use at most 25 songs per artist per decade (273,747 songs in total, 6,590 / 20,213 / 131,779 in the three decades). Hover or tap a bar for details. Error bars show sampling margin of error, which is somewhat optimistic because songs by the same artist are related.</p></div>
-
-  <h3>The longer trend</h3>
-  <div class="card"><div class="box"><canvas id="c2" role="img" aria-label="Line chart of mismatch rate by decade from the 1950s to the 2020s"></canvas></div>
-  <p class="note">All cleaned songs, not capped. The 1970s and 1980s are essentially tied at the top. The 1950s have only about 1,200 songs and the 2020s are an incomplete decade, so read those two with care.</p></div>
-
-  <h3>The pattern holds when genre mix is held fixed</h3>
-  <p>Rock and metal fell from 54% of songs in the 1970s to 18.5% in the 2010s while hip hop and rap rose from 8% to 57%, which could have created a false trend. After recalculating each decade with the same genre mix, the rates were 18.8% (1970s), 15.6% (1990s), and 9.3% (2010s). The decline remains.</p>
+<section id="questions">
+<h2>Research questions</h2>
+<p class="lead">The main question:</p>
+<p>In a large streaming-era dataset of popular songs, how common is the pairing of upbeat-sounding music with negative lyrics in the 1970s, 1990s, and 2010s, and how can the historical contexts of those decades help interpret what mismatched songs were doing?</p>
+<p class="lead">Four sub-questions:</p>
+<ol class="qs">
+<li>How much did the pairing change across the three decades?</li>
+<li>Does the change appear within genres, or only because the mix of genres shifted?</li>
+<li>What do mismatched songs do (irony, grief set to dance beats, masking pain), and does that differ by decade?</li>
+<li>How far can the automated measures be trusted?</li>
+</ol>
+<p><b>Why these decades.</b> They mark the peak, middle, and low point of the overall trend and are evenly spaced. They were chosen from the numbers before the historical research began.</p>
 </section>
 
-<section id="genre">
-  <h2>Genre</h2>
-  <div class="todo"><b>To add:</b> a chart of mismatch by genre across the three decades. The rate falls in every genre with enough songs. Genre tags in this dataset are unreliable (for example, a plain “hip hop” tag appears on about 43% of songs), so genres are used as a check, not ranked.</div>
+<section id="author">
+<h2>About the author</h2>
+<div class="person">
+<div class="ph">Photo (optional)</div>
+<div><p><b>[to add: your name]</b></p><p>[to add: your role, course, or program, and a sentence about why you chose this topic]</p><p>[to add: contact email]</p></div>
+</div>
 </section>
 
-<section id="context">
-  <h2>Historical context</h2>
-  <div class="todo"><b>To add:</b> a timeline with one panel per decade (1970s, 1990s, 2010s), covering politics and economy, society and culture, and the music industry. Events are chosen by rules set in advance, with a source for each. Links between history and the data are offered as “consistent with,” not as causes.</div>
+<section id="notes">
+<h2>Presentation notes</h2>
+<p>The site is built to be readable by as many people as possible.</p>
+<h3>Color-blind conscious</h3>
+<p>The two main colors, gold and blue, stay distinguishable for the common kinds of color blindness. Charts also use labels and patterns of position, not color alone.</p>
+<h3>Screen reader friendly</h3>
+<p>Navigation is a plain row of links with no drop-down menus. Pages have skip links, and every chart has a text version of its data beneath it.</p>
+<h3>Limited mobility</h3>
+<p>All links and buttons work with a keyboard, and focus is clearly outlined.</p>
+<h3>No audio</h3>
+<p>The site has no sound or video.</p>
 </section>
 
-<section id="readings">
-  <h2>Close readings</h2>
-  <div class="todo"><b>To add:</b> short readings of selected songs, ideally one per decade, on what the contrast between sound and words is doing.</div>
-</section>
-
-<section id="validation">
-  <h2>Checking the labels by hand</h2>
-  <p>Both measures are automated, so I checked 90 randomly drawn songs that the computer had flagged as mismatches (30 per decade, one song per artist, seed 42).</p>
-  <table>
-    <thead><tr><th>Decade</th><th>Music sounded upbeat to me</th><th>Lyrics were negative</th></tr></thead>
-    <tbody>
-      <tr><td>1970s</td><td>26 of 30 (87%)</td><td>30 of 30</td></tr>
-      <tr><td>1990s</td><td>21 of 30 (70%)</td><td>30 of 30</td></tr>
-      <tr><td>2010s</td><td>18 of 30 (60%), plus 2 unsure</td><td>30 of 30</td></tr>
-    </tbody>
-  </table>
-  <p>The lyric labels held up in this sample. The music score agreed with my judgment less often in later decades, so the computer’s “upbeat” label may be less reliable for newer songs. If anything, this would make the real decline larger, not smaller, but the sample is small (about ±15 points) and I did not check songs the computer left unflagged.</p>
-  <p class="note">The check was not blind: I knew every song was flagged and could see its year. Criteria: [to add: write the rules you used for “upbeat” and “negative”].</p>
-</section>
-
-<section id="methods">
-  <h2>Data and methods</h2>
-  <p>Source: the Kaggle dataset “500K+ Spotify Songs with Lyrics, Emotions &amp; More” (file: final_milliondataset_BERT_500K_revised.json). Lyrics are not reproduced here. [to add: link to the Kaggle page and its license]</p>
-  <table>
-    <thead><tr><th>Version</th><th>Songs</th><th>What it is</th></tr></thead>
-    <tbody>
-      <tr><td>Original dataset</td><td>364,376</td><td>The source file, with lyrics. Not hosted here.</td></tr>
-      <tr><td>Cleaned songs</td><td>330,188</td><td>Duplicates and broken labels removed, 1950 onward, lyrics left out. [to add: link]</td></tr>
-      <tr><td>Capped songs (main results)</td><td>273,747</td><td>At most 25 songs per artist per decade. [to add: link]</td></tr>
-    </tbody>
-  </table>
-  <h3>Cleaning steps</h3>
-  <ul class="plain">
-    <li>One malformed line was skipped, “angry” was merged into “anger,” and songs without a valid emotion label were removed.</li>
-    <li>Duplicates (same artist and title) were removed. Live versions or alternate spellings may remain.</li>
-    <li>The release year was extracted and grouped into decades. Songs before 1950 were excluded because there are too few.</li>
-    <li>For the capped version, songs were shuffled (seed 42) and the first 25 per artist per decade were kept.</li>
-  </ul>
-  <h3>Definitions</h3>
-  <ul class="plain">
-    <li><b>Upbeat:</b> Positiveness of 67 or higher on a 0 to 100 scale, which appears to correspond to Spotify’s valence.</li>
-    <li><b>Negative lyrics:</b> an emotion label of sadness, anger, or fear.</li>
-    <li><b>Mismatch:</b> a song that is both. Results were similar at cutoffs of 60 and 75.</li>
-  </ul>
-</section>
-
-<section id="limits">
-  <h2>Limitations</h2>
-  <ul class="plain">
-    <li><b>The dataset leans toward recent music.</b> The 2010s hold about half the songs, and older songs are the ones that stayed available.</li>
-    <li><b>Genre tags are unreliable.</b> Some songs carry clearly wrong tags, and genre is a secondary check only.</li>
-    <li><b>Some years may be reissue dates,</b> which would blur the decades. This has not been measured.</li>
-    <li><b>Both measures are automated estimates,</b> and the music score agreed with a human listener less often for newer songs.</li>
-    <li><b>Three snapshots,</b> so nothing can be said about what happened between them.</li>
-    <li><b>Context explains, it does not prove.</b> The data cannot show why the pattern changed.</li>
-  </ul>
-</section>
-</main>
-
-<footer>
-  <p>Findings describe patterns in this dataset, not all music. [to add: your name, course or date, and sources]</p>
-</footer>
-
-<script>
-const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-const fmt=n=>n.toLocaleString("en-US");
-const moe=(r,n)=>196*Math.sqrt(r/100*(1-r/100)/n);
-let charts=[];
-function opts(){return{responsive:true,maintainAspectRatio:false,
-  plugins:{legend:{display:false},tooltip:{backgroundColor:css("--ink"),titleColor:css("--bg"),bodyColor:css("--bg"),padding:10}},
-  scales:{x:{ticks:{color:css("--muted")},grid:{display:false}},
-  y:{min:0,ticks:{color:css("--muted"),callback:v=>v+"%"},grid:{color:css("--line")},title:{display:true,text:"% of songs",color:css("--muted")}}}}}
-function build(){
-  charts.forEach(c=>c.destroy());charts=[];
-  const up=css("--up"),neg=css("--neg"),panel=css("--panel");
-  // 1: three decades, capped
-  const R=[19.3,14.5,9.4],N=[6590,20213,131779];
-  const o1=opts();
-  o1.plugins.tooltip.callbacks={label:i=>[R[i.dataIndex].toFixed(1)+"% (±"+moe(R[i.dataIndex],N[i.dataIndex]).toFixed(1)+")",fmt(N[i.dataIndex])+" songs"]};
-  charts.push(new Chart(document.getElementById("c1"),{type:"bar",data:{labels:["1970s","1990s","2010s"],
-    datasets:[{data:R,backgroundColor:[up,neg+"CC",neg],borderRadius:6,maxBarThickness:110}]},options:o1}));
-  // 2: trend, all cleaned songs
-  const D=["1950s","1960s","1970s","1980s","1990s","2000s","2010s","2020s"];
-  const T=[12.8,14.9,18.9,19.0,14.8,14.7,9.5,12.3];
-  const TN=[1191,4438,11004,12956,26318,43611,156825,73845];
-  const focus=[2,4,6];
-  const o2=opts();
-  o2.plugins.tooltip.callbacks={label:i=>[T[i.dataIndex].toFixed(1)+"% (±"+moe(T[i.dataIndex],TN[i.dataIndex]).toFixed(1)+")",fmt(TN[i.dataIndex])+" songs"]};
-  charts.push(new Chart(document.getElementById("c2"),{type:"line",data:{labels:D,datasets:[{data:T,borderColor:neg,borderWidth:3,tension:.25,
-    pointRadius:D.map((_,i)=>focus.includes(i)?8:5),pointBorderWidth:2,pointBorderColor:neg,
-    pointBackgroundColor:D.map((_,i)=>focus.includes(i)?up:panel)}]},options:o2}));
-}
-build();
-matchMedia("(prefers-color-scheme: dark)").addEventListener("change",build);
-</script>
+</div></main>
+<footer><div class="wrap">
+<p>Findings describe patterns in one dataset, not all music. Charts have text versions beneath them. This site has no audio or video and does not reproduce song lyrics.</p>
+<p>[to add: your name, course and date]</p>
+</div></footer>
 </body>
 </html>
